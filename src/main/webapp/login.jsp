@@ -1,3 +1,6 @@
+<!--
+    登录页面
+-->
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+
@@ -17,7 +20,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="<%=basePath%>/static/css/font.css">
     <link rel="stylesheet" href="<%=basePath%>/static/css/weadmin.css">
-    <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>/js/jquery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>/js/jquery/pager/jquery.pager.js"></script>
     <link rel="stylesheet" href="<%=basePath%>/layui/css/layui.css">
     <script src="<%=basePath%>/layui/layui.js"></script>
 </head>
@@ -33,6 +37,10 @@
         <hr class="hr15">
         <input class="loginin" value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
         <hr class="hr20" >
+        <input class="loginin" value="注册"  style="width:100%;" id="rebtn" type="button">
+        <hr class="hr20" >
+<%--        <button class="layui-btn" onclick="register()" style="width:100% ;height: 48px ;font-size: 24px;">注册</button>--%>
+<%--        <hr class="hr20" >--%>
     </form>
 </div>
 
@@ -50,6 +58,12 @@
             return false;
         });
     });
+    //进行页面跳转
+    $("#rebtn").click(function () {
+         console.log("hello");
+         // $("window").attr('href','register.jsp');
+        window.location.href = "/user/toRegister";
+    })
 </script>
 <!-- 底部结束 -->
 </body>

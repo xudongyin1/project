@@ -1,9 +1,13 @@
+<!--
+主页面
+-->
+
 <%
     //String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+
-            request.getServerPort()+"/";
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" +
+            request.getServerPort() + "/";
 %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
@@ -12,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>器械管理后台</title>
     <link rel="stylesheet" href="<%=basePath%>/layui/css/layui.css">
-    <link rel="stylesheet" type="text/css" href="<%=basePath%>/static/css/hp-layui.css" />
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/static/css/hp-layui.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
 </head>
 
 <body class="layui-layout-body hp-white-theme">
@@ -33,9 +37,9 @@
             <li class="layui-nav-item level-nav">
                 <a href="#">库存管理</a>
             </li>
-            <%--<li class="layui-nav-item level-nav">
-                <a href="#">科室耗材管理</a>
-            </li>--%>
+            <li class="layui-nav-item level-nav">
+                <a href="#">顾客管理</a>
+            </li>
             <li class="layui-nav-item level-nav">
                 <a href="#">基础设置</a>
             </li>
@@ -56,7 +60,8 @@
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <a class="name" href="javascript:;"><i class="layui-icon"></i>主题<span class="layui-nav-more"></span></a>
+                <a class="name" href="javascript:;"><i class="layui-icon"></i>主题<span
+                        class="layui-nav-more"></span></a>
                 <dl class="layui-nav-child layui-anim layui-anim-upbit">
                     <dd>
                         <a skin="hp-black-theme" class="hp-theme-skin-switch" href="javascript:;">低调黑</a>
@@ -70,7 +75,7 @@
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <a href="/login.jsp">退出</a>
+                <a href="/WEB-INF/views/login.jsp">退出</a>
             </li>
         </ul>
     </div>
@@ -81,7 +86,8 @@
             <ul class="layui-nav hp-nav-none">
                 <li class="layui-nav-item">
                     <a href="javascript:;" class="hp-user-name">
-                        <img src="<%=basePath%>/images/panda.png" class="layui-circle-img"><span class="hp-kd">${requestScope.userName}</span>
+                        <img src="<%=basePath%>/images/panda.png" class="layui-circle-img"><span
+                            class="hp-kd">${requestScope.userName}</span>
                     </a>
                     <dl class="layui-nav-child">
                         <dd>
@@ -118,20 +124,14 @@
                     <a class="hp-tab-add" hp-href="/stock/accessStock" href="javascript:;">器材出入库明细</a>
                 </li>
             </ul>
-            <%--<ul class="layui-nav layui-nav-tree" style="display: none" lay-filter="test">
+           <ul class="layui-nav layui-nav-tree" style="display: none" lay-filter="test">
                 <li class="layui-nav-item">
-                    <a class="hp-tab-add" hp-href="" href="javascript:;">科室领用</a>
+                    <a class="hp-tab-add" hp-href="/user/buyer" href="javascript:;">顾客管理</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a class="hp-tab-add" hp-href="" href="javascript:;">科室退库</a>
+                    <a class="hp-tab-add" hp-href="/user/order" href="javascript:;">订单管理</a>
                 </li>
-                <li class="layui-nav-item">
-                    <a class="hp-tab-add" hp-href="" href="javascript:;">科室库存管理</a>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="hp-tab-add" hp-href="" href="javascript:;">领用记录</a>
-                </li>
-            </ul>--%>
+            </ul>
             <ul class="layui-nav layui-nav-tree" style="display: none" lay-filter="test">
                 <li class="layui-nav-item">
                     <a class="hp-tab-add" hp-href="/department/department" href="javascript:;">科室管理</a>
@@ -175,18 +175,18 @@
                         </div>
                     </div>
                     <!-- 源码地址 -->
-                   <%-- <div style="margin-top: 10px;">
-                        <blockquote class="layui-elem-quote">
-                            源码地址：<br/><br/>
-                            <a target="_blank" href="https://github.com/shushengritian"><button class="layui-btn layui-btn-danger  layui-btn-sm">github</button></a>
-                        </blockquote>
-                        <blockquote class="layui-elem-quote">
-                            <h2>我们的征途是星辰大海</h2>
-                            <br/>
-                            <b>qq群: 783549656</b>
-                        </blockquote>
+                    <%-- <div style="margin-top: 10px;">
+                         <blockquote class="layui-elem-quote">
+                             源码地址：<br/><br/>
+                             <a target="_blank" href="https://github.com/shushengritian"><button class="layui-btn layui-btn-danger  layui-btn-sm">github</button></a>
+                         </blockquote>
+                         <blockquote class="layui-elem-quote">
+                             <h2>我们的征途是星辰大海</h2>
+                             <br/>
+                             <b>qq群: 783549656</b>
+                         </blockquote>
 
-                    </div>--%>
+                     </div>--%>
 
                 </div>
             </div>
@@ -214,7 +214,7 @@
     });
 
     //JavaScript代码区域
-    layui.use(['element', 'carousel', 'fhTheme', 'fhTab', 'fhLayedit', 'fhRightMenu'], function() {
+    layui.use(['element', 'carousel', 'fhTheme', 'fhTab', 'fhLayedit', 'fhRightMenu'], function () {
 
         var element = layui.element;
         var carousel = layui.carousel; //轮播
@@ -241,7 +241,7 @@
         // 右键tab菜单
         fhRightMenu.init();
 
-        element.on('nav(alert111)', function(elem){
+        element.on('nav(alert111)', function (elem) {
             //console.log(elem)
             layer.msg(elem.text());
         });
@@ -251,7 +251,6 @@
             $(".layui-nav-tree").hide();
             $(".layui-nav-tree").eq(index).show();
         });
-
 
 
     });

@@ -1,3 +1,6 @@
+<!--
+      器材维护页面
+-->
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+
@@ -273,9 +276,9 @@
                 });
             },
             end: function () {
-                setTimeout(function () {
-                    getTableDate(1);
-                },2000);
+                // setTimeout(function () {
+                //     getTableDate(1);
+                // },2000);
             }
         });
     }

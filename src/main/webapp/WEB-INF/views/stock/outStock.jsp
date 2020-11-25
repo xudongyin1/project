@@ -1,3 +1,7 @@
+<!--
+       器材出库页面
+-->
+
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+
@@ -153,6 +157,7 @@
         }
     }
     function storage(hcNo) {
+
         var index = layer.open({
             title: "出库",
             type: 1, //page层
@@ -183,12 +188,13 @@
                         layer.msg(res.msg);
                     }
                     layer.close(index);
+                    $("#infoForm").empty();
                 });
             },
             end: function () {
-                setTimeout(function () {
-                    getTableDate(1);
-                },5000);
+                // setTimeout(function () {
+                //     getTableDate(1);
+                // },5000);
 
             }
         });

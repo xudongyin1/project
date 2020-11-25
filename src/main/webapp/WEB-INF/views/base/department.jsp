@@ -1,3 +1,7 @@
+<!--
+        科室管理页面
+-->
+
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+
@@ -190,7 +194,7 @@
             id : id
         },function (result) {
             var res = JSON.parse(result);
-            console.log(res);
+            // console.log(res); 测试
             if (res.code == 1) {
                 var data = res.data;
                 $('#numberF').val(data.number),
@@ -222,9 +226,9 @@
                 });
             },
             end: function () {
-                setTimeout(function () {
-                    getTableDate(1);
-                },2000);
+                // setTimeout(function () {
+                //     getTableDate(1);
+                // },2000);
             }
         });
     }

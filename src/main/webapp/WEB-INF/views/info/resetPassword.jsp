@@ -1,3 +1,6 @@
+<!--
+    重置用户密码页面
+-->
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+
@@ -48,7 +51,7 @@
             </div>
         </div>
     </div>
-    <a id="newLogin" class="layui-hide" href="/login.jsp"></a>
+    <a id="newLogin" class="layui-hide" href="/WEB-INF/views/login.jsp"></a>
 </form>
 <script src="<%=basePath%>/layui/layui.js"></script>
 <script type="text/javascript" src="<%=basePath%>/js/jquery/jquery-1.12.4.min.js"></script>

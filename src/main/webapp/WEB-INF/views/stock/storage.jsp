@@ -1,3 +1,7 @@
+<!--
+       器材入库页面
+-->
+
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+

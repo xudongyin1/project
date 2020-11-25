@@ -2,6 +2,8 @@ package com.graduate.dao;
 
 import com.graduate.model.User;
 import com.graduate.model.UserExample;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -35,4 +37,9 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+   //查询所有顾客
+    List<User> selectByMap(@Param("map") Map<String, Object> map);
+
+    int countByMap(@Param("map") HashMap<String, Object> map);
 }

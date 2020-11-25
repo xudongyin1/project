@@ -84,11 +84,12 @@ public class StockServieImpl extends BaseImpl implements StockService {
             stock.setModifiedTime(new Date());
             si = stockMapper.updateByPrimaryKey(stock);
         } else {
-            stock.setNo(hcNo);
-            stock.setStock(Integer.parseInt(number));
-            stock.setCreateTime(new Date());
-            stock.setModifiedTime(new Date());
-            si = stockMapper.insert(stock);
+            Stock stock1 = new Stock();
+            stock1.setNo(hcNo);
+            stock1.setStock(Integer.parseInt(number));
+            stock1.setCreateTime(new Date());
+            stock1.setModifiedTime(new Date());
+            si = stockMapper.insert(stock1);
         }
         return aiAndSi(ai, si);
     }

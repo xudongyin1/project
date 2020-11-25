@@ -1,10 +1,8 @@
 package com.graduate.service;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.graduate.model.User;
 import net.sf.json.JSONObject;
 
-import javax.json.JsonObject;
 import java.util.List;
 
 /**
@@ -23,7 +21,7 @@ public interface IUserService {
     List<User> login(String username, String password);
 
     /**
-     * 用户登陆
+     * 获取用户信息
      * @param username 用户名
      * @param password 密码
      * @return boolean 查询结果
@@ -31,7 +29,7 @@ public interface IUserService {
     JSONObject getUserInfo(String username, String password);
 
     /**
-     * 用户登陆
+     * 更新密码
      * @param loginAccount
      * @param oldPassword
      * @param newPassword
@@ -40,7 +38,7 @@ public interface IUserService {
     JSONObject updatePassword(String loginAccount, String oldPassword, String newPassword, String id);
 
     /**
-     * 用户登陆
+     * 更新用户信息
      * @param userName
      * @param phone
      * @param email
@@ -48,4 +46,22 @@ public interface IUserService {
      * */
     JSONObject updateUserInfo(String userName, String phone, String email, String id);
 
+    /**
+     * 添加管理员用户
+     * @param user
+     * @return
+     */
+    JSONObject addUser(User user);
+
+
+    //查询所有顾客信息
+    JSONObject findAllBuyer(String name, String account, String pageNo, String pageSize);
+    //通过id查询顾客信息
+    JSONObject getBuyerById(String id);
+
+    //通过id更新顾客信息
+    JSONObject editById(String id, String name, String account, String phone, String email, String status);
+
+    //通过id删除顾客
+    JSONObject delById(String id);
 }

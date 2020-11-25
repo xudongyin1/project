@@ -1,3 +1,7 @@
+<!--
+    器材出入库明细页面
+-->
+
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+
@@ -83,6 +87,7 @@
         },function(result){
             $("#dataBody").empty();
             var res = JSON.parse(result);
+            // console.log(res.count);
             if (res.code == 1) {
                 layer.msg(res.msg);
                 createRow(res.data);

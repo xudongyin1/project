@@ -1,3 +1,6 @@
+<!--
+    用户基本页面
+-->
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+

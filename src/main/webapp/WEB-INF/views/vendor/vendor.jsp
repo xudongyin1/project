@@ -1,3 +1,7 @@
+<!--
+        材料厂商页面
+-->
+
 <%
     //String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+
@@ -179,12 +183,17 @@
            var status = v.status;
            if ('1' == status) {
                status = '启用';
+               row.append('<td><div class="layui-bg-green" style="width: fit-content"> '+status+'</div></td>');
+
            } else if ('2' == status) {
                status = '停用';
+               row.append('<td><div class="layui-bg-red" style="width: fit-content"> '+status+'</div></td>');
+
            } else if ('3' == status) {
                status = '废除';
+               row.append('<td><div class="layui-bg-gray" style="width: fit-content"> '+status+'</div></td>');
+
            }
-           row.append('<td>'+ status +'</td>');
            row.append('<td><a class="layui-btn layui-btn-xs" onclick="edit('+v.id+')">编辑</a>' +
                '<a class="layui-btn layui-btn-danger layui-btn-xs" onclick="del('+v.id+')" >删除</a></td>');
            $("#vendor").append(row);
@@ -261,9 +270,9 @@
                });
            },
            end: function () {
-               setTimeout(function () {
-                   getTableDate(1);
-               },2000);
+               // setTimeout(function () {
+               //     getTableDate(1);
+               // },2000);
            }
        });
    }

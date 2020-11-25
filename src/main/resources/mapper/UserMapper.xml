@@ -99,6 +99,7 @@
         <include refid="Base_Column_List" />
         from user where 1=1
         <if test="map.username != null"> and login_account = #{map.username,jdbcType=VARCHAR}</if>
+        <if test="map.type != null">and user_type = #{map.type,jdbcType=TINYINT}</if>
         <if test="map.password != null"> and password = #{map.password,jdbcType=VARCHAR}</if>
     </select>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
@@ -323,4 +324,21 @@
       modified_time = #{modifiedTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+    <!-- id,user_name,login_account,mobile,email,status,create_time  -->
+    <select id="selectByMap"  parameterType="java.util.Map" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from user
+        where  user_type = 2
+        <if test="map.name != null">and user_name=#{map.name} </if>
+        <if test="map.account != null">and login_account=#{map.account}</if>
+        <if test="map.startIndex != null">
+        limit #{map.startIndex},#{map.pageSize}</if>
+    </select>
+    <select id="countByMap" parameterType="map" resultType="java.lang.Integer">
+        select  count(*) from user
+        where user_type=2
+        <if test="map.name != null">and user_name=#{map.name} </if>
+        <if test="map.account != null">and login_account=#{map.account}</if>
+    </select>
 </mapper>

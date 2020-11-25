@@ -1,6 +1,7 @@
 package com.graduate.model;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class User {
     private Long id;
@@ -42,6 +43,7 @@ public class User {
     public User() {
         super();
     }
+
 
     public Long getId() {
         return id;
@@ -125,6 +127,23 @@ public class User {
 
     public Date getModifiedTime() {
         return modifiedTime;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", loginAccount='" + loginAccount + '\'' +
+                ", password='" + password + '\'' +
+                ", userType=" + userType +
+                ", status=" + status +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", department=" + department +
+                ", createTime=" + createTime +
+                ", modifiedTime=" + modifiedTime +
+                '}';
     }
 
     public void setModifiedTime(Date modifiedTime) {
